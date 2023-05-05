@@ -58,7 +58,10 @@
         ]
     ];
   ?>
-  <div class="d-flex justify-content-center align-items-center gap-4">
+
+  
+  <!-- Hotel cards container -->
+  <div class="d-flex justify-content-center align-items-stretch gap-4">
     <?php foreach($hotels as $elem){?>
     <div class="card" style="width: 18rem;">
       <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
