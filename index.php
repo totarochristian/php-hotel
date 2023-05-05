@@ -110,7 +110,7 @@
           <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
           <div class="card-body">
             <!-- Vote defined printing stars -->
-            <p class="card-text">
+            <p id="stars" class="card-text">
               <?php for($i=0; $i<$elem["vote"]; $i++){?>
                 <i class="fa-solid fa-star"></i>
               <?php } ?>
