@@ -18,9 +18,10 @@
 
   <?php 
   
-    include './partials/hotelData.php'; 
-    include './partials/navbar.php';
-    include './partials/hotels.php';
+    include __DIR__ . '/functions/functions.php';
+
+    include __DIR__ . '/partials/navbar.php';
+    include __DIR__ . '/partials/hotels.php';
 
   ?>
 
