@@ -62,22 +62,40 @@
     $filterVote = isset($_GET['vote']) ? $_GET['vote'] : 0;
   ?>
 
-  <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
-    <!-- Parking filter -->
-    <label for="parking">Parcheggio: </label>
-    <select name="parking" id="parking">
-      <option value="-1" <?php if($filterParking == -1) echo 'selected' ?>>Tutti i risultati</option>
-      <option value="1" <?php if($filterParking == 1) echo 'selected' ?>>Incluso</option>
-      <option value="0" <?php if($filterParking == 0) echo 'selected' ?>>Non incluso</option>
-    </select>
-    <!-- Vote filter -->
-    <label for="vote">Voto: </label>
-    <input type="number" name="vote" id="vote" max="5" min="0" value="<?php echo $filterVote ?>">
-    <!-- Submit btn -->
-    <input type="submit" value="Filtra dati">
-  </form>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" class="d-flex align-items-center">
+      <img src="./assets/images/icon.png" alt="Bootstrap" width="55" height="60">
+      <span>Hotels</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET" class="w-100 p-3 d-flex justify-content-center align-items-center gap-4 flex-wrap">
+        <!-- Parking filter -->
+        <div class="d-flex gap-2 align-items-center">
+          <label for="parking">Parcheggio: </label>
+          <select name="parking" id="parking">
+            <option value="-1" <?php if($filterParking == -1) echo 'selected' ?>>Tutti i risultati</option>
+            <option value="1" <?php if($filterParking == 1) echo 'selected' ?>>Incluso</option>
+            <option value="0" <?php if($filterParking == 0) echo 'selected' ?>>Non incluso</option>
+          </select>
+        </div>
+        <!-- Vote filter -->
+        <div class="d-flex gap-2 align-items-center">
+          <label for="vote">Voto: </label>
+          <input type="number" name="vote" id="vote" max="5" min="0" value="<?php echo $filterVote ?>">
+        </div>
+        <!-- Submit btn -->
+        <input type="submit" value="Filtra dati">
+      </form>
+    </div>
+  </div>
+</nav>
+
   <!-- Hotel cards container -->
-  <div class="d-flex justify-content-center align-items-stretch gap-4">
+  <div class="p-4 mt-4 mb-4 d-flex justify-content-center align-items-stretch gap-4 flex-wrap">
     <?php foreach($hotels as $elem){?>
       <?php if((isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"]))&&($filterVote==0 || $filterVote==$elem['vote'])){ ?>
         <div class="card" style="width: 18rem;">
