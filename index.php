@@ -59,7 +59,7 @@
   <div class="d-flex justify-content-center align-items-center gap-4">
     <?php foreach($hotels as $elem){?>
     <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"><?php echo $elem["name"] ?></h5>
         <p class="card-text"><?php echo $elem["description"] ?></p>
