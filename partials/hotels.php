@@ -4,7 +4,7 @@
     $counter = 0;
     foreach($hotels as $elem){?>
     <?php 
-      if((isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"]))&&($filterVote==0 || $filterVote<=$elem['vote'])&&(str_contains(strtolower($elem['name']),strtolower($filterName)))){ 
+      if(ShowElement($elem, $filterParking, $filterVote, $filterName)){ 
         $counter += 1;
       ?>
       <div class="card" style="width: 18rem;">
