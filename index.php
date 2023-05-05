@@ -51,14 +51,16 @@
         ]
     ];
   ?>
-  <?php foreach($hotels as $elem){?>
-  <div class="hotel">
-    <h2><?php echo $elem["name"] ?></h2>
-    <p><?php echo $elem["description"] ?></p>
-    <p><?php echo $elem["parking"] ?></p>
-    <p><?php echo $elem["vote"] ?></p>
-    <p><?php echo $elem["distance_to_center"] ?></p>
+  <div class="d-flex justify-content-center align-items-center gap-4">
+    <?php foreach($hotels as $elem){?>
+    <div id="hotelsContainer" class="hotel">
+      <h2><?php echo $elem["name"] ?></h2>
+      <p><?php echo $elem["description"] ?></p>
+      <p><?php echo $elem["parking"] ?></p>
+      <p><?php echo $elem["vote"] ?></p>
+      <p><?php echo $elem["distance_to_center"] ?></p>
+    </div>
+    <?php } ?>
   </div>
-  <?php } ?>
 </body>
 </html>
