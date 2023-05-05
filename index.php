@@ -121,7 +121,7 @@
             <!-- Badges in the bottom of the card -->
             <p class="card-text badge rounded-pill text-bg-primary"><?php echo $elem["distance_to_center"] ?> km dal centro</p>
             <?php if($elem["parking"]){ ?>
-              <p class="card-text badge rounded-pill text-bg-primary">parcheggio</p>
+              <p class="card-text badge rounded-pill text-bg-primary">parcheggio incluso</p>
             <?php } ?>
           </div>
         </div>
