@@ -57,15 +57,18 @@
             'image' => 'hotel-milano.jpg'
         ]
     ];
+
+    $filterParking = $_GET['parking'];
+    $filterVote = $_GET['vote'];
   ?>
 
   <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
     <!-- Parking filter -->
     <label for="parking">Parcheggio: </label>
     <select name="parking" id="parking">
-      <option value="">Tutti i risultati</option>
-      <option value="1">Incluso</option>
-      <option value="0">Non incluso</option>
+      <option value="-1" <?php if($filterParking == -1) echo 'selected' ?>>Tutti i risultati</option>
+      <option value="1" <?php if($filterParking == 1) echo 'selected' ?>>Incluso</option>
+      <option value="0" <?php if($filterParking == 0) echo 'selected' ?>>Non incluso</option>
     </select>
     <!-- Vote filter -->
     <label for="vote">Voto: </label>
@@ -76,22 +79,24 @@
   <!-- Hotel cards container -->
   <div class="d-flex justify-content-center align-items-stretch gap-4">
     <?php foreach($hotels as $elem){?>
-    <div class="card" style="width: 18rem;">
-      <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">
-          <?php for($i=0; $i<$elem["vote"]; $i++){?>
-            <i class="fa-solid fa-star"></i>
-          <?php } ?>
-        </p>
-        <h5 class="card-title"><?php echo $elem["name"] ?></h5>
-        <p class="card-text"><?php echo $elem["description"] ?></p>
-        <p class="card-text badge rounded-pill text-bg-primary"><?php echo $elem["distance_to_center"] ?> km dal centro</p>
-        <?php if($elem["parking"]){ ?>
-          <p class="card-text badge rounded-pill text-bg-primary">parcheggio</p>
-        <?php } ?>
-      </div>
-    </div>
+      <?php if(isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"])){ ?>
+        <div class="card" style="width: 18rem;">
+          <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">
+              <?php for($i=0; $i<$elem["vote"]; $i++){?>
+                <i class="fa-solid fa-star"></i>
+              <?php } ?>
+            </p>
+            <h5 class="card-title"><?php echo $elem["name"] ?></h5>
+            <p class="card-text"><?php echo $elem["description"] ?></p>
+            <p class="card-text badge rounded-pill text-bg-primary"><?php echo $elem["distance_to_center"] ?> km dal centro</p>
+            <?php if($elem["parking"]){ ?>
+              <p class="card-text badge rounded-pill text-bg-primary">parcheggio</p>
+            <?php } ?>
+          </div>
+        </div>
+      <?php } ?>
     <?php } ?>
   </div>
 </body>
