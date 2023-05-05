@@ -1,5 +1,3 @@
-<?php include './hotelData.php' ?>
-
 <!-- Hotel cards container -->
 <div id="hotelsContainer" class="p-4 mt-4 mb-4 d-flex justify-content-center align-items-stretch gap-4 flex-wrap">
   <?php
