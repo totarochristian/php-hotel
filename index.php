@@ -59,7 +59,15 @@
     ];
   ?>
 
-  
+  <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
+    <label for="parking">Parcheggio: </label>
+    <select name="parking" id="parking">
+      <option value="">Tutti i risultati</option>
+      <option value="1">Incluso</option>
+      <option value="0">Non incluso</option>
+    </select>
+    <input type="submit" value="Filtra dati">
+  </form>
   <!-- Hotel cards container -->
   <div class="d-flex justify-content-center align-items-stretch gap-4">
     <?php foreach($hotels as $elem){?>
