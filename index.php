@@ -60,12 +60,17 @@
   ?>
 
   <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
+    <!-- Parking filter -->
     <label for="parking">Parcheggio: </label>
     <select name="parking" id="parking">
       <option value="">Tutti i risultati</option>
       <option value="1">Incluso</option>
       <option value="0">Non incluso</option>
     </select>
+    <!-- Vote filter -->
+    <label for="vote">Voto: </label>
+    <input type="number" name="vote" id="vote" max="5" min="0" value="0">
+    <!-- Submit btn -->
     <input type="submit" value="Filtra dati">
   </form>
   <!-- Hotel cards container -->
