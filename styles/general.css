@@ -5,3 +5,9 @@
 #stars{
   color: rgb(245, 194, 53);
 }
+.card>img{
+  width: 100%;
+  height: 20vh;
+  min-height: 150px;
+  object-fit: cover;
+}
