@@ -50,7 +50,15 @@
             'distance_to_center' => 50
         ]
     ];
-
   ?>
+  <?php foreach($hotels as $elem){?>
+  <div class="hotel">
+    <h2><?php echo $elem["name"] ?></h2>
+    <p><?php echo $elem["description"] ?></p>
+    <p><?php echo $elem["parking"] ?></p>
+    <p><?php echo $elem["vote"] ?></p>
+    <p><?php echo $elem["distance_to_center"] ?></p>
+  </div>
+  <?php } ?>
 </body>
 </html>
