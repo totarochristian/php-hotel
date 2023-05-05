@@ -58,8 +58,8 @@
         ]
     ];
 
-    $filterParking = $_GET['parking'];
-    $filterVote = $_GET['vote'];
+    $filterParking = isset($_GET['parking']) ? $_GET['parking'] : -1;
+    $filterVote = isset($_GET['vote']) ? $_GET['vote'] : 0;
   ?>
 
   <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET">
@@ -72,7 +72,7 @@
     </select>
     <!-- Vote filter -->
     <label for="vote">Voto: </label>
-    <input type="number" name="vote" id="vote" max="5" min="0" value="0">
+    <input type="number" name="vote" id="vote" max="5" min="0" value="<?php echo $filterVote ?>">
     <!-- Submit btn -->
     <input type="submit" value="Filtra dati">
   </form>
