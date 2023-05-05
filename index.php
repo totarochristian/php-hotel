@@ -60,7 +60,7 @@
 
     $filterName = isset($_GET['name']) ? $_GET['name'] : "";
     $filterParking = isset($_GET['parking']) ? $_GET['parking'] : -1;
-    $filterVote = isset($_GET['vote']) ? $_GET['vote'] : 0;
+    $filterVote = isset($_GET['vote']) && !empty($_GET['vote']) ? $_GET['vote'] : 0;
   ?>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -103,7 +103,7 @@
   <!-- Hotel cards container -->
   <div class="p-4 mt-4 mb-4 d-flex justify-content-center align-items-stretch gap-4 flex-wrap">
     <?php foreach($hotels as $elem){?>
-      <?php if((isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"]))&&($filterVote==0 || $filterVote==$elem['vote'])){ ?>
+      <?php if((isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"]))&&($filterVote==0 || $filterVote==$elem['vote'])&&(str_contains(strtolower($elem['name']),strtolower($filterName)))){ ?>
         <div class="card" style="width: 18rem;">
           <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
           <div class="card-body">
