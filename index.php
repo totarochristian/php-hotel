@@ -79,7 +79,7 @@
   <!-- Hotel cards container -->
   <div class="d-flex justify-content-center align-items-stretch gap-4">
     <?php foreach($hotels as $elem){?>
-      <?php if(isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"])){ ?>
+      <?php if((isset($filterParking) && ($filterParking<0 || $filterParking==$elem["parking"]))&&($filterVote==0 || $filterVote==$elem['vote'])){ ?>
         <div class="card" style="width: 18rem;">
           <img src="./assets/images/<?php echo $elem['image'] ?>" class="card-img-top" alt="...">
           <div class="card-body">
