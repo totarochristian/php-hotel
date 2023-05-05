@@ -16,11 +16,13 @@
 </head>
 <body>
 
-  <?php include './partials/hotelData.php' ?>
+  <?php 
+  
+    include './partials/hotelData.php'; 
+    include './partials/navbar.php';
+    include './partials/hotels.php';
 
-  <?php include './partials/navbar.php' ?>
-
-  <?php include './partials/hotels.php' ?>
+  ?>
 
 </body>
 </html>
