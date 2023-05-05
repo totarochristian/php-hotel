@@ -58,6 +58,7 @@
         ]
     ];
 
+    $filterName = isset($_GET['name']) ? $_GET['name'] : "";
     $filterParking = isset($_GET['parking']) ? $_GET['parking'] : -1;
     $filterVote = isset($_GET['vote']) ? $_GET['vote'] : 0;
   ?>
@@ -73,6 +74,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <form action="<?php echo $_SERVER['PHP_SELF']?>" method="GET" class="w-100 p-3 d-flex justify-content-center align-items-center gap-4 flex-wrap">
+        <!-- Name filter -->
+        <div class="d-flex gap-2 align-items-center">
+          <label for="vote">Nome: </label>
+          <input type="text" name="name" id="name" maxlength="20" value="<?php echo $filterName ?>">
+        </div>
         <!-- Parking filter -->
         <div class="d-flex gap-2 align-items-center">
           <label for="parking">Parcheggio: </label>
