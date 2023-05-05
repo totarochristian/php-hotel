@@ -53,12 +53,17 @@
   ?>
   <div class="d-flex justify-content-center align-items-center gap-4">
     <?php foreach($hotels as $elem){?>
-    <div id="hotelsContainer" class="hotel">
-      <h2><?php echo $elem["name"] ?></h2>
-      <p><?php echo $elem["description"] ?></p>
-      <p><?php echo $elem["parking"] ?></p>
-      <p><?php echo $elem["vote"] ?></p>
-      <p><?php echo $elem["distance_to_center"] ?></p>
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $elem["name"] ?></h5>
+        <p class="card-text"><?php echo $elem["description"] ?></p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><?php echo $elem["parking"] ?></li>
+          <li class="list-group-item"><?php echo $elem["vote"] ?></li>
+          <li class="list-group-item"><?php echo $elem["distance_to_center"] ?></li>
+        </ul>
+      </div>
     </div>
     <?php } ?>
   </div>
