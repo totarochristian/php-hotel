@@ -88,7 +88,7 @@
           <input type="number" name="vote" id="vote" max="5" min="0" value="<?php echo $filterVote ?>">
         </div>
         <!-- Submit btn -->
-        <input type="submit" value="Filtra dati">
+        <input type="submit" value="Cerca">
       </form>
     </div>
   </div>
