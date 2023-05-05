@@ -10,6 +10,8 @@
   <!-- Import bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <!-- Import font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <?php
@@ -63,6 +65,7 @@
       <div class="card-body">
         <h5 class="card-title"><?php echo $elem["name"] ?></h5>
         <p class="card-text"><?php echo $elem["description"] ?></p>
+        <p class="card-text"><strong>Distanza dal centro:</strong> <?php echo $elem["distance_to_center"] ?> km</p>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><?php echo $elem["parking"] ?></li>
           <li class="list-group-item"><?php echo $elem["vote"] ?></li>
