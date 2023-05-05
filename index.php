@@ -18,7 +18,7 @@
 
   <?php 
   
-    include __DIR__ . '/functions/functions.php';
+    require __DIR__ . '/functions/functions.php';
 
     include __DIR__ . '/partials/navbar.php';
     include __DIR__ . '/partials/hotels.php';
